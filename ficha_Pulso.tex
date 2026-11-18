@@ -1,0 +1,67 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titlespacing{\section}{0pt}{1.2em}{0.4em}
+
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.2em,topsep=0.3em}
+
+\title{\textbf{Ficha Técnica do Software}\\[0.3em]
+\large PULSO --- Sistema de Gestão Escolar para Agendamento de Espaços,\\
+Calendário, Tutoria e Ocorrências}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Título}
+\textbf{PULSO --- Sistema de Gestão Escolar para Agendamento de Espaços, Calendário, Tutoria e Ocorrências}
+
+\section{Data de criação}
+10 de agosto de 2026 --- data em que o software ficou funcional.
+
+Para confirmar a data do primeiro registro no histórico do projeto:
+\begin{verbatim}
+git log --reverse --format="%ai %s" | head -1
+\end{verbatim}
+
+\section{Linguagem de programação}
+\begin{itemize}
+  \item \textbf{PHP 8.3 ou superior} --- backend, regras de negócio, acesso ao banco de dados, geração de relatórios e envio de e-mail. Utilizado com o framework \textbf{Laravel 13}.
+  \item \textbf{JavaScript} --- interatividade do frontend, com empacotamento por Vite.
+  \item \textbf{SQL} --- definição e manipulação do banco de dados MySQL 8.0.
+  \item \textbf{HTML5} --- estrutura das páginas, por meio do motor de templates Blade.
+  \item \textbf{CSS3} --- estilização e layout.
+\end{itemize}
+
+Bibliotecas relevantes do projeto: DomPDF (geração de PDF), Laravel Excel (planilhas), Blade Heroicons (ícones), Spatie Laravel Permission (controle de permissões) e Resend (envio de e-mail).
+
+\section{Tipo de programa}
+Aplicação web multiusuário, com arquitetura cliente-servidor: interface no navegador, processamento no servidor e persistência em banco de dados relacional. Não é aplicativo desktop nem mobile nativo --- roda no navegador e é acessado por URL.
+
+\section{Campo de aplicação}
+\textbf{Educação --- gestão escolar.} O sistema atende a rotina administrativa e pedagógica de escolas de ensino fundamental e médio, apoiando a organização de espaços físicos, o calendário institucional, o acompanhamento de tutoria e o registro de ocorrências.
+
+O sistema atende perfis distintos (professores, coordenadores, pedagogos e secretaria), o que corresponde ao cenário real de uma escola com equipe pedagógica e administrativa atuando sobre os mesmos recursos e informações.
+
+\section{Descrição breve}
+O PULSO é um sistema web de gestão escolar que centraliza rotinas administrativas e pedagógicas da instituição em um único ambiente. O sistema está organizado em quatro frentes principais.
+
+O \textbf{agendamento de espaços} permite reservar laboratórios, salas e equipamentos, com controle de disponibilidade que evita conflitos de uso e dá visibilidade à ocupação dos recursos. O \textbf{calendário escolar} concentra eventos e compromissos institucionais, tornando a agenda da escola consultável em um só lugar. A \textbf{tutoria} organiza as atividades de acompanhamento de alunos e turmas, apoiando o trabalho pedagógico. O registro de \textbf{ocorrências} permite que a equipe documente e trate situações do cotidiano escolar.
+
+O acesso é controlado por perfil de usuário --- professores, coordenadores, pedagogos e secretaria ---, cada um com as permissões correspondentes ao seu papel, por meio de um sistema de papéis e permissões.
+
+Entre os recursos técnicos estão: geração de relatórios em PDF e de planilhas para exportação de dados, envio de notificações por e-mail, autenticação de usuários e interface responsiva. A operação é feita inteiramente pelo navegador.
+
+O projeto é construído sobre o framework Laravel, com banco de dados MySQL. As configurações de ambiente ficam isoladas em arquivo próprio, permitindo que o mesmo código rode em desenvolvimento e produção sem alteração. O versionamento segue o modelo de branches \texttt{main} (versão estável) e \texttt{develop} (desenvolvimento).
+
+\end{document}
